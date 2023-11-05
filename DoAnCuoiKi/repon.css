@@ -1,3 +1,136 @@
+/* Thêm CSS để ẩn slide ban đầu */
+.icon-repon{
+    display: none;
+}
+.icon-repon .slide-menu {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #414141f0;
+    overflow-x: hidden;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.icon-repon .slide-menu-content {
+    padding: 60px 10px;
+    text-align: center;
+}
+
+
+.icon-repon .slide-menu a:hover {
+    color: #f2f2f2;
+}
+
+.icon-repon .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon-repon .repon-language select,
+.icon-repon .repon-currency select {
+    border: none;
+    background-color: rgba(139, 69, 19, 0);
+    color: #f2f2f2;
+}
+
+/* CSS for two selects on the same row */
+.icon-repon .repon-language,
+.icon-repon .repon-currency {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* CSS for search input and search icon */
+.icon-repon .repon-search {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icon-repon .search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: #ffffffba;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.icon-repon .search-input:focus {
+    outline: none;
+}
+
+.icon-repon .fa-search {
+    color: #d9d9d9;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* CSS for the "+" button and text on the left */
+.icon-repon .accordion-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    color:#ffffff;
+}
+
+.icon-repon .accordion-menu a{
+    text-decoration: none;
+    color:#ffffff;
+}
+
+.icon-repon .accordion-menu button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color:#ffffff;
+}
+
+.icon-repon .accordion {
+    display: none;
+    padding-left: 20px;
+}
+
+.icon-repon .accordion ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+.icon-repon .accordion a{
+    text-decoration: none;
+    color: #d9d9d9;
+}
+
+.repon-icons{
+    margin-top: 20px;
+}
+
+.icon-repon .repon-icons ul{
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+.icon-repon .repon-icons li{
+    border: 1px solid #d9d9d9;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: aqua;
+}
+.icon-repon .repon-icons a{
+    color: #ffffff;
+}
 @media all and (min-width: 678px) and (max-width: 991px){
     .body-category{
         margin: 50px 0;
@@ -69,6 +202,51 @@
         margin: 10px;
         border: 1px solid #000;
     }
+    .pro-info{
+        margin: 30px 0;
+    }
+    .pro-info .content{
+        height: 600px;
+    }
+    .mid-ul{
+        display: none;
+    }
+    .mid{
+        margin-right: 30px;
+    }
+    .icon-repon{
+        display: block;
+    }
+    .footer-content {
+        margin: 0;
+    }
+    .company-logo {
+        margin: 30px 0;
+    }
+    .copyright{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .body-cart-bot{
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .body-cart-bot button{
+        width: 150px;
+    }
+    .body-shop-mid{
+        margin: 30px 0;
+    }
+    .shopmid-text{
+        width: 50%;
+    }
+    .body-about-mid{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media all and (min-width: 320px) and (max-width: 767px){
@@ -76,7 +254,7 @@
         margin: 50px 0;
     }
     .product{
-        width: 50%;
+        width: 98%;
         height: 100px;
     }
 
@@ -88,14 +266,14 @@
     }
 
     .product-card {
-        width: 40%;
+        width: 80%;
     }
     
     .caption-big{
         font-size: 30px;
     }
     .wrapper {
-        max-width: 600px;
+        max-width: 350px;
     }
     .top-bar{
         display: none;
@@ -107,14 +285,14 @@
         display: none;
     }
     .wrapper .carousel-1 {
-        grid-auto-columns: calc((100% / 2) - 12px);
+        grid-auto-columns: calc((100% / 1) - 12px);
     }
     .company-logo {
-        margin: 30px 1%;
+        margin: 30px 2%;
     }
     
     .mid {
-        margin: 0 1%;
+        margin: 0 2%;
     }
     .body-blog-mid{
         display: flex;
@@ -132,7 +310,7 @@
         flex-direction: column;
     }
     .single-img {
-        width: 50%;
+        width: 100%;
         padding-right: 10px;
     }
 
@@ -141,5 +319,93 @@
         height: 200px;
         margin: 10px;
         border: 1px solid #000;
+    }
+    .mid-ul{
+        display: none;
+    }
+    .mid{
+        margin-right: 30px;
+    }
+    .icon-repon{
+        display: block;
+    }
+    .news-item {
+        width: calc(95% - 1px);
+    }
+    .company-logo {
+        margin: 30px 0;
+    }
+    .copyright{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .body-cart-bot{
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .body-cart-bot button{
+        width: 150px;
+    }
+    .body-shop-mid{
+        margin: 30px 0;
+    }
+    .shopmid-text{
+        width: 100%;
+    }
+    .body-cart-mid table input{
+        width: 40px;
+    }
+    .blog-card{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .blog-card img{
+        width: 100%;
+        margin: 30px 0;
+    }
+    .body-about-mid{
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+    }
+    .body-about-mid img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-section-logo img{
+        width: 100%;
+    }
+    .footer-section-logo{
+        width: 100%;
+    }
+    .footer-section{
+        width: 100%;
+    }
+    .footer-content{
+        margin: 30px 20%;
+    }
+    .header-banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .banner-1, .banner-2{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .banner-caption{
+        width: 100%;
+    }
+    .carousel-caption{
+        display: none;
+    }
+    .body-banner p{
+        font-size: 15px;
+    }
+    .carousel-item p{
+        display: none;
     }
 }

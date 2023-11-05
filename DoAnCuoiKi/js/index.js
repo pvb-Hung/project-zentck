@@ -66,22 +66,22 @@ let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+
 carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
-// Insert copies of the first few cards to end of carousel for infinite scrolling
+
 carouselChildrens.slice(0, cardPerView).forEach(card => {
     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
 
-// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+
 carousel.classList.add("no-transition");
 carousel.scrollLeft = carousel.offsetWidth;
 carousel.classList.remove("no-transition");
 
-// Add event listeners for the arrow buttons to scroll the carousel left and right
+
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
@@ -97,8 +97,7 @@ const dragStart = (e) => {
 }
 
 const dragging = (e) => {
-    if (!isDragging) return; // if isDragging is false return from here
-    // Updates the scroll position of the carousel based on the cursor movement
+    if (!isDragging) return;
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
@@ -178,5 +177,36 @@ function filterCategory(category) {
         selectedProducts.forEach(product => {
             product.style.display = 'block';
         });
+    }
+}
+
+
+var menuIcon = document.getElementById("menu-icon");
+var slideMenu = document.getElementById("mySlideMenu");
+
+slideMenu.style.width = "0";
+
+menuIcon.addEventListener("click", function () {
+    if (slideMenu.style.width === "0px" || slideMenu.style.width === "") {
+        slideMenu.style.width = "75%";
+    } else {
+        slideMenu.style.width = "0";
+    }
+});
+
+function closeSlideMenu() {
+    slideMenu.style.width = "0";
+}
+
+function toggleContent(element) {
+    var content = element.nextElementSibling;
+    var button = element.querySelector("button");
+
+    if ($(content).is(":hidden")) {
+        $(content).slideDown();
+        button.textContent = "-";
+    } else {
+        $(content).slideUp();
+        button.textContent = "+";
     }
 }
